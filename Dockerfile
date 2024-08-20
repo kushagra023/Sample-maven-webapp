@@ -2,7 +2,7 @@
 FROM openjdk:8
 
 # Copy the JAR file to the container
-COPY target/myapp.jar /app/myapp.jar
+COPY target/*.jar /app/myapp.jar
 
 # Set the working directory
 WORKDIR /app
