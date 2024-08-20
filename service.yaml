@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sample-webapp-service
+  name: sample-webapp
 spec:
+  type: LoadBalancer
   selector:
     app: sample-webapp
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 8081
-  type: LoadBalancer
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
