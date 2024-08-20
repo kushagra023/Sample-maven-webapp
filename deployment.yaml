@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-webapp-deployment
+  name: sample-webapp
 spec:
   replicas: 2
   selector:
@@ -13,7 +13,7 @@ spec:
         app: sample-webapp
     spec:
       containers:
-        - name: sample-webapp
-          image: kushagraag/devsecops-image:latest
-          ports:
-            - containerPort: 8081
+      - name: sample-webapp
+        image: kushagraag/devsecops-image:latest
+        ports:
+        - containerPort: 8080
