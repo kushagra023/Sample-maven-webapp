@@ -16,9 +16,9 @@ data:
       - add_cloud_metadata: ~
 
     output.elasticsearch:
-      hosts: ["52.66.243.171:9200"]
-      username: "admin"
+      hosts: ["http://52.66.243.171:9200"]
+      username: "admin" 
       password: "sheero"
 
     setup.kibana:
-      host: "52.66.243.171:5601"
+      host: "http://52.66.243.171:5601"
