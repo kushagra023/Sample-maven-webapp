@@ -1,18 +1,14 @@
-# Use the official OpenJDK 8 base image
-FROM openjdk:8
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:8-jre-slim
 
-# Copy the JAR file to the container
-COPY target/*.jar /app/myapp.jar
-
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Expose the port the app runs on (optional, adjust if necessary)
+# Copy the JAR file into the container
+COPY target/*.jar /app/sample-webapp.jar
+
+# Expose port 8080 (or the port your app uses)
 EXPOSE 8080
 
 # Run the JAR file
-ENTRYPOINT ["java", "-jar", "myapp.jar"]
-
-# Add health check to ensure the container is running properly
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s \
-  CMD curl --fail http://localhost:8080/actuator/health || exit 1
+ENTRYPOINT ["java", "-jar", "sample-webapp.jar"]
